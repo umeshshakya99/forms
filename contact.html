@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style type="text/css">
+	body{
+		background-image: url("https://bit.ly/2PsECXZ");
+		background-repeat: no-repeat;
+		display: block;
+	}
+	.container h1{
+		text-transform: uppercase;
+	}
+</style>
+
+</head>
+<body>
+   <div class="container">
+   	<h1 class="text-success text-center">Contact Us</h1>
+   </div>
+   <div class="col-4 m-auto d-block bg-light ">
+   	<form action="#" onsubmit=" return validation()">
+   		<div class="form-group">
+   		<label>Name</label>
+   		<input type="text" name="name" class="form-control" autocomplete="off" id="name">
+		<span id="nm" class="text-danger font-weight-bold"></span>	   	
+
+   	   	</div>
+   	<div class="form-group">
+   		<label>Email-Id</label>
+   		<input type="text" name="EmailId" class="form-control" autocomplete="off" id="email">
+   		<span id="ema" class="text-danger font-weight-bold"></span>
+   		</div>
+   		<div class="form-group">
+   		<label>Phone Number</label>
+   		<input type="digit" name="Phone" class="form-control" autocomplete="off" id="phone">
+   		<span id="pn" class="text-danger font-weight-bold"></span>
+   		</div>
+   		<div class="form-group">
+   			<label>Comment</label>
+   			<input   type="text" name="text" class="form-control" autocomplete="off">
+   		</div>	
+   		<div class="form-group">
+   			<input type="submit" name="Submit" >
+   		</div>
+   			
+   		</div>
+   		
+   	</form>
+   </div>
+
+   <script >
+   	function validation(){
+   		var user=document.getElementById('name').value;
+   		var Email=document.getElementById('email').value;
+   		var Phonen=document.getElementById('phone').value;
+        
+ 		if (user=="") {
+				document.getElementById('nm').innerHTML="Please fill the usrname "
+				return false;
+			}
+			if((user.length <=2) || (user.length >10) ){
+				document.getElementById('nm').innerHTML="Please enter the name between 2 and 10 "
+				return false;
+
+			}
+			if(!isNaN(user)){
+				document.getElementById('nm').innerHTML="only character are allowed "
+				return false;
+
+             }
+			if (Email=="") {
+				document.getElementById('ema').innerHTML="Please fill the email"
+				return false;
+			}
+			if (Email.indexOf('@') <=0) {
+				document.getElementById('ema').innerHTML="invalid position of @"
+				return false;
+
+			}
+			if((Email.charAt(Email.length -4)!='.')&& (Email.charAt(Email.length -3)!='.')){
+				document.getElementById('ema').innerHTML="please enter invalid email "
+				return false;
+			}
+			
+			if (Phonen=="") {
+				document.getElementById('pn').innerHTML="Please fill the MobileNumber"
+				return false;
+			}
+			if(isNaN (Phonen)){
+				document.getElementById('pn').innerHTML="Digit Only"
+				return false;
+
+			}
+			if (Phonen.length!=10){
+				document.getElementById('pn').innerHTML="  must be 10 Digit "
+				return false;
+			}
+			
+		
+
+
+
+
+
+   	}
+
+   	
+
+   </script>
+
+</body>
+</html>
